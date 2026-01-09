@@ -6,10 +6,13 @@ class LoadingWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: SpinKitFadingCircle(
-        color: Theme.of(context).colorScheme.secondary,
-        size: 80.0,
+    return Align(
+      alignment: AlignmentGeometry.bottomCenter,
+      child: Center(
+        child: SpinKitFadingCircle(
+          color: Color(0xFF064D3B),
+          size: 60.0,
+        ),
       ),
     );
   }
