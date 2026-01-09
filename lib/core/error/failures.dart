@@ -9,7 +9,6 @@ abstract class Failure extends Equatable {
   List<Object> get props => [message];
 }
 
-// General failures
 class ServerFailure extends Failure {
   const ServerFailure(super.message);
 }
@@ -25,4 +24,3 @@ class OfflineFailure extends Failure {
 class EmptyCacheFailure extends Failure {
   const EmptyCacheFailure(super.message);
 }
-

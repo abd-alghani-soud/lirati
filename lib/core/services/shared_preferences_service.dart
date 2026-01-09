@@ -114,4 +114,12 @@ class SharedPreferencesService {
   static bool getFirstTimeQoutation() {
     return _sp.getBool(AppKeys.firstTimeQoutation) ?? false;
   }
+
+  static Future<void> storeUsdRate(double rate) async {
+    await _sp.setDouble(AppKeys.usdRate, rate);
+  }
+
+  static double getUsdRate() {
+    return _sp.getDouble(AppKeys.usdRate) ?? 0;
+  }
 }

@@ -1,5 +1,3 @@
-
-// Exception
 class ServerException implements Exception {
   final String message;
 
@@ -7,9 +5,9 @@ class ServerException implements Exception {
 }
 
 class UnAuthenticatedException implements Exception {
-  UnAuthenticatedException(this.message);
-
   final String message;
+
+  UnAuthenticatedException(this.message);
 }
 
 class EmptyCacheException implements Exception {
@@ -18,7 +16,7 @@ class EmptyCacheException implements Exception {
   EmptyCacheException(this.message);
 }
 
-class OfflineException implements Exception{
+class OfflineException implements Exception {
   final String message;
 
   OfflineException(this.message);

@@ -5,7 +5,7 @@ abstract class NetworkChecker {
   Future<bool> get isConnected;
 }
 
-@Injectable(as:NetworkChecker)
+@Injectable(as: NetworkChecker)
 class NetworkCheckerImp implements NetworkChecker {
   final InternetConnectionChecker check;
 

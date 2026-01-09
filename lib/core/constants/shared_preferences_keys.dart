@@ -1,6 +1,5 @@
 class AppKeys {
   AppKeys._();
-
   static const String token = 'token';
   static const String fcmToken = 'fcmToken';
   static const String idForOTP = 'idForOTP';
@@ -12,4 +11,5 @@ class AppKeys {
   static const String theme = 'theme';
   static const String firstTimeDetails = 'firstTimeDetails';
   static const String firstTimeQoutation = 'firstTimeOpenApp';
+  static const String usdRate = 'usdRate';
 }
