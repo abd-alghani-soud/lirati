@@ -5,6 +5,7 @@ import 'package:easy_localization/easy_localization.dart';
 class ConverterTutorialManager {
   final BuildContext context;
   final GlobalKey menuKey;
+  final GlobalKey rateKey;
   final GlobalKey amountKey;
   final GlobalKey resultKey;
   final VoidCallback? onStart;
@@ -15,6 +16,7 @@ class ConverterTutorialManager {
   ConverterTutorialManager({
     required this.context,
     required this.menuKey,
+    required this.rateKey,
     required this.amountKey,
     required this.resultKey,
     this.onStart,
@@ -47,7 +49,25 @@ class ConverterTutorialManager {
         keyTarget: menuKey,
         shape: ShapeLightFocus.Circle,
         contents: [
-          _content('tutorial_menu_title', 'tutorial_menu_description'),
+          _content(
+            'tutorial_menu_title',
+            'tutorial_menu_description',
+            showNext: true,
+          ),
+        ],
+      ),
+      TargetFocus(
+        identify: "rate",
+        keyTarget: rateKey,
+        shape: ShapeLightFocus.RRect,
+        radius: 15,
+        paddingFocus: 5,
+        contents: [
+          _content(
+            'tutorial_rate_title',
+            'tutorial_rate_description',
+            showNext: true,
+          ),
         ],
       ),
       TargetFocus(

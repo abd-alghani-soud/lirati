@@ -20,12 +20,15 @@ class ResultItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       child: Container(
+        width: double.infinity,
         padding: EdgeInsets.symmetric(vertical: 20.h, horizontal: 8.w),
         decoration: BoxDecoration(
           color: color,
           borderRadius: BorderRadius.circular(18.r),
         ),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Text(
               label.tr(),
@@ -34,9 +37,11 @@ class ResultItem extends StatelessWidget {
                 fontSize: 11.sp,
                 fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
             ),
             SizedBox(height: 8.h),
             FittedBox(
+              fit: BoxFit.scaleDown,
               child: Text(
                 value,
                 style: TextStyle(
@@ -44,6 +49,7 @@ class ResultItem extends StatelessWidget {
                   fontSize: 22.sp,
                   fontWeight: FontWeight.bold,
                 ),
+                textAlign: TextAlign.center,
               ),
             ),
           ],

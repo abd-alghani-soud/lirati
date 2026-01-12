@@ -8,11 +8,13 @@ import 'amount_input_card.dart';
 class ConverterInputsSection extends StatelessWidget {
   final ConverterController controller;
   final GlobalKey? amountKey;
+  final GlobalKey? rateKey;
 
   const ConverterInputsSection({
     super.key,
     required this.controller,
     this.amountKey,
+    this.rateKey,
   });
 
   @override
@@ -24,12 +26,16 @@ class ConverterInputsSection extends StatelessWidget {
           builder: (context, currency, widget) {
             final labelKey =
                 controller.labelKeys[currency] ?? controller.labelKeys['USD']!;
-            return RateInputCard(
-              controller: controller.rateController,
-              notifier: controller.rateNotifier,
-              onCalc: controller.calculate,
-              label: labelKey.tr(),
-              hintText: 'enter_rate_manually'.tr(),
+
+            return Container(
+              key: rateKey,
+              child: RateInputCard(
+                controller: controller.rateController,
+                notifier: controller.rateNotifier,
+                onCalc: controller.calculate,
+                label: labelKey.tr(),
+                hintText: 'enter_rate_manually'.tr(),
+              ),
             );
           },
         ),

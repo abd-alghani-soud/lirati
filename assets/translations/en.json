@@ -48,5 +48,7 @@
   "next": "Next",
   "done": "Done",
   "how_to_use_app": "How to use app",
-  "skip": "Skip"
+  "skip": "Skip",
+  "tutorial_rate_title": "Exchange Rate",
+  "tutorial_rate_description": "You can modify the exchange rate manually here if needed."
 }

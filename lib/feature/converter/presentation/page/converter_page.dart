@@ -21,6 +21,7 @@ class _ConverterPageState extends State<ConverterPage> {
   late final ConverterTutorialManager _tutorialManager;
 
   final GlobalKey _menuKey = GlobalKey();
+  final GlobalKey _rateKey = GlobalKey();
   final GlobalKey _amountKey = GlobalKey();
   final GlobalKey _resultKey = GlobalKey();
 
@@ -35,6 +36,8 @@ class _ConverterPageState extends State<ConverterPage> {
       _tutorialManager = ConverterTutorialManager(
         context: context,
         menuKey: _menuKey,
+        rateKey: _rateKey,
+        // <--- تمريره للـ Manager
         amountKey: _amountKey,
         resultKey: _resultKey,
         onStart: () => _isTutorialActive.value = true,
@@ -81,6 +84,7 @@ class _ConverterPageState extends State<ConverterPage> {
             SliverToBoxAdapter(
               child: ConverterBody(
                 controller: controller,
+                rateKey: _rateKey,
                 amountKey: _amountKey,
                 resultKey: _resultKey,
               ),

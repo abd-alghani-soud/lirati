@@ -1,7 +1,7 @@
 {
   "app_name": "الليرة السورية الجديدة",
   "calculator_sub": "حاسبة العملة الجديدة",
-  "enter_old_amount": "أدخل المبلغ بالعملة القديم",
+  "enter_old_amount": "أدخل المبلغ بالعملة القديمة",
   "example_hint": "مثال : 123,456",
   "currency_unit": "ل.س",
   "current_amount": "المبلغ بالعملة الجديدة الآن",
@@ -48,5 +48,7 @@
   "next": "التالي",
   "how_to_use_app" : "كيفية استخدام التطبيق",
   "done": "تم",
-  "skip": "تخطي"
+  "skip": "تخطي",
+  "tutorial_rate_title": "سعر الصرف",
+  "tutorial_rate_description": "يمكنك تعديل سعر الصرف يدوياً من هنا إذا لزم الأمر."
 }
