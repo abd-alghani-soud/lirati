@@ -37,7 +37,6 @@ class _ConverterPageState extends State<ConverterPage> {
         context: context,
         menuKey: _menuKey,
         rateKey: _rateKey,
-        // <--- تمريره للـ Manager
         amountKey: _amountKey,
         resultKey: _resultKey,
         onStart: () => _isTutorialActive.value = true,
@@ -45,6 +44,9 @@ class _ConverterPageState extends State<ConverterPage> {
       );
 
       _maybeShowOnboarding();
+
+      // جلب البيانات تلقائياً عند بدء التشغيل
+      controller.fetchRate(controller.selectedCurrencyNotifier.value);
     });
   }
 
@@ -70,26 +72,39 @@ class _ConverterPageState extends State<ConverterPage> {
     }
   }
 
+  Future<void> _handleRefresh() async {
+    await controller.refreshData();
+  }
+
   @override
   Widget build(BuildContext context) {
     return ValueListenableBuilder<bool>(
       valueListenable: _isTutorialActive,
       builder: (context, isActive, _) {
-        return CustomScrollView(
-          physics: isActive
-              ? const NeverScrollableScrollPhysics()
-              : const BouncingScrollPhysics(),
-          slivers: [
-            ConverterSliverAppBar(menuKey: _menuKey),
-            SliverToBoxAdapter(
-              child: ConverterBody(
-                controller: controller,
-                rateKey: _rateKey,
-                amountKey: _amountKey,
-                resultKey: _resultKey,
-              ),
+        return RefreshIndicator(
+          onRefresh: _handleRefresh,
+          color: Theme.of(context).primaryColor,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          displacement: 40,
+          edgeOffset: 20,
+          child: CustomScrollView(
+            physics: isActive
+                ? const NeverScrollableScrollPhysics()
+                : const BouncingScrollPhysics(
+              parent: AlwaysScrollableScrollPhysics(),
             ),
-          ],
+            slivers: [
+              ConverterSliverAppBar(menuKey: _menuKey),
+              SliverToBoxAdapter(
+                child: ConverterBody(
+                  controller: controller,
+                  rateKey: _rateKey,
+                  amountKey: _amountKey,
+                  resultKey: _resultKey,
+                ),
+              ),
+            ],
+          ),
         );
       },
     );

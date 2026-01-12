@@ -49,6 +49,9 @@
   "done": "Done",
   "how_to_use_app": "How to use app",
   "skip": "Skip",
+  "live_rates": "Live Rates",
+  "tap_to_refresh": "Tap to refresh",
+  "loading_rates": "Loading rates...",
   "tutorial_rate_title": "Exchange Rate",
   "tutorial_rate_description": "You can modify the exchange rate manually here if needed."
 }

@@ -1,9 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- صلاحية الإنترنت -->
     <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- ضروري لـ Android 11+ حتى يقدر يكتشف تطبيقات تفتح روابط -->
     <queries>
         <!-- لروابط https -->
         <intent>

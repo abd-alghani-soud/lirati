@@ -11,7 +11,7 @@ class ConverterController {
   final ValueNotifier<double> convertedAmountNotifier = ValueNotifier(0.0);
   final ValueNotifier<double> rateNotifier = ValueNotifier(0.0);
   final ValueNotifier<String> selectedCurrencyNotifier = ValueNotifier('USD');
-  final ValueNotifier<bool> showApiPricesNotifier = ValueNotifier(false);
+  final ValueNotifier<bool> showApiPricesNotifier = ValueNotifier(true);
 
   final TextEditingController amountController = TextEditingController();
   final TextEditingController rateController = TextEditingController();
@@ -31,17 +31,16 @@ class ConverterController {
     convertedAmountNotifier.value = rate > 0 ? amount / rate : 0;
   }
 
-  void onPressShowToday() {
-    showApiPricesNotifier.value = true;
-    fetchRate(selectedCurrencyNotifier.value);
+  Future<void> refreshData() async {
+    if (selectedCurrencyNotifier.value != 'SYP') {
+      fetchRate(selectedCurrencyNotifier.value);
+    }
   }
 
   void onCurrencyChanged(String slug) {
     if (slug == 'SYP') return;
     selectedCurrencyNotifier.value = slug;
-    if (showApiPricesNotifier.value) {
-      fetchRate(slug);
-    }
+    fetchRate(slug);
   }
 
   void fetchRate(String slug) {

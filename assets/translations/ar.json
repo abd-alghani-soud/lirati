@@ -49,6 +49,9 @@
   "how_to_use_app" : "كيفية استخدام التطبيق",
   "done": "تم",
   "skip": "تخطي",
+  "live_rates": "أسعار حية",
+  "tap_to_refresh": "انقر للتحديث",
+  "loading_rates": "جاري تحميل الأسعار...",
   "tutorial_rate_title": "سعر الصرف",
   "tutorial_rate_description": "يمكنك تعديل سعر الصرف يدوياً من هنا إذا لزم الأمر."
 }

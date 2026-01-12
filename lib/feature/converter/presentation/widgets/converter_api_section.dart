@@ -22,28 +22,12 @@ class ConverterApiSection extends StatelessWidget {
           ),
         ),
         SizedBox(height: 12.h),
-        ValueListenableBuilder<bool>(
-          valueListenable: controller.showApiPricesNotifier,
-          builder: (context, isActivated, widget) {
-            if (!isActivated) {
-              return SizedBox(
-                width: 0.9.sw,
-                height: 50.h,
-                child: ElevatedButton(
-                  onPressed: controller.onPressShowToday,
-                  child: Text('today_lira'.tr()),
-                ),
-              );
-            } else {
-              return ApiRatesCard(
-                visible: true,
-                bloc: controller.currencyBloc,
-                rateNotifier: controller.rateNotifier,
-                rateController: controller.rateController,
-                onCalculate: controller.calculate,
-              );
-            }
-          },
+        ApiRatesCard(
+          bloc: controller.currencyBloc,
+          rateNotifier: controller.rateNotifier,
+          rateController: controller.rateController,
+          onCalculate: controller.calculate,
+          onRefresh: () => controller.refreshData(),
         ),
       ],
     );

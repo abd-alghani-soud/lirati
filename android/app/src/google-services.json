@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "803597894612",
+    "project_id": "lirati",
+    "storage_bucket": "lirati.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:803597894612:android:76e9de11e7dbd8e1154c41",
+        "android_client_info": {
+          "package_name": "com.example.lirati"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCOHPAs_0WmFSCDBCV7eN7dUREjsKHfO-U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
